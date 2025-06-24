@@ -3,11 +3,11 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 
-import dotenv from 'dotenv';
-dotenv.config(); // Load .env variables
+// import dotenv from 'dotenv';
+// dotenv.config(); // Load .env variables
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = 4000;
 console.log(port)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -18,7 +18,7 @@ app.set("view engine", "ejs");
 
 app.get("/", async (req, res) => {
   try {
-    const apiKey = process.env.WEATHER_API_KEY;
+    const apiKey ="676e00e04ff7174c6f4019ae28ac3bcf";
     console.log(apiKey)
     const response = await axios.get("https://api.openweathermap.org/data/2.5/weather", {
       params: {
