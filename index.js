@@ -6,10 +6,9 @@ import { fileURLToPath } from "url";
 import dotenv from 'dotenv';
 dotenv.config(); // Load .env variables
 
-
-
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
+console.log(port)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -20,6 +19,7 @@ app.set("view engine", "ejs");
 app.get("/", async (req, res) => {
   try {
     const apiKey = process.env.WEATHER_API_KEY;
+    console.log(apiKey)
     const response = await axios.get("https://api.openweathermap.org/data/2.5/weather", {
       params: {
         q: "Chennai",
@@ -112,6 +112,6 @@ app.get("/", async (req, res) => {
   }
 
 })
-app.listen(port, "0.0.0.0", () => {
-  console.log(`Server running on port ${port}`);
-});
+app.listen(port, () => {
+  console.log("Server listening on port 4000");
+})
