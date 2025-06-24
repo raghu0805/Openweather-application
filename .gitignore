@@ -1,7 +1,7 @@
 # Ignore node modules and lock file
 node_modules/
 package-lock.json
-
+.env
 # Ignore IDE/editor folders
 .idea/
 
