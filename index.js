@@ -6,6 +6,8 @@ import { fileURLToPath } from "url";
 import dotenv from 'dotenv';
 dotenv.config(); // Load .env variables
 
+
+
 const app = express();
 const port = 4000;
 const __filename = fileURLToPath(import.meta.url);
@@ -110,6 +112,6 @@ app.get("/", async (req, res) => {
   }
 
 })
-app.listen(port, () => {
-  console.log("Server listening on port 4000");
-})
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Server running on port ${port}`);
+});
