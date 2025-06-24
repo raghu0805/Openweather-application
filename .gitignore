@@ -1,0 +1,10 @@
+# Ignore node modules and lock file
+node_modules/
+package-lock.json
+
+# Ignore IDE/editor folders
+.idea/
+
+# Ignore all images folder content except .gitkeep
+images/*
+!images/.gitkeep
